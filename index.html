@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="StreamAV-Bench is a comprehensive benchmark for long-horizon and interactive streaming audio-video generation.">
+  <meta property="og:title" content="StreamAV-Bench">
+  <meta property="og:description" content="A comprehensive benchmark for streaming audio-video generation.">
+  <meta property="og:image" content="assets/teaser.webp">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f7f5ef">
+  <title>StreamAV-Bench</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="StreamAV-Bench home">
+        <span class="brand-mark" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span>StreamAV-Bench</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>
+        <span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      <div class="nav-links" id="nav-links" data-nav-links>
+        <a href="#overview">Overview</a>
+        <a href="#benchmark">Benchmark</a>
+        <a href="#results">Findings</a>
+        <a href="#citation">Citation</a>
+        <span class="nav-paper nav-disabled">Paper · Soon</span>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-orb orb-one" aria-hidden="true"></div>
+      <div class="hero-orb orb-two" aria-hidden="true"></div>
+      <div class="shell hero-inner">
+        <div class="eyebrow reveal">
+          <span class="eyebrow-dot"></span>
+          A benchmark for streaming audio-video generation
+        </div>
+        <h1 class="paper-name reveal">StreamAV-Bench</h1>
+        <p class="paper-title reveal">
+          A Comprehensive Benchmark for<br class="desktop-break">
+          Streaming Audio-Video Generation
+        </p>
+        <p class="hero-tagline reveal">
+          Streaming generation<br>
+          needs <em>streaming evaluation.</em>
+        </p>
+
+        <div class="authors reveal" aria-label="Authors">
+          <span>Kaiqi Liu<sup>1,2</sup></span>
+          <span>Haoxuan Zeng<sup>2</sup></span>
+          <span>Jingqi Liu<sup>1,2</sup></span>
+          <span>Jiacong Fang<sup>1,2</sup></span>
+          <span>Ziqi Cai<sup>2</sup></span>
+          <span>Yunyao Mao<sup>3</sup></span>
+          <span>Henglin Liu<sup>4</sup></span>
+          <span>Yu Sheng<sup>5</sup></span>
+          <span>Shuchen Weng<sup>1,2</sup></span>
+          <span>Boxin Shi<sup>2</sup></span>
+        </div>
+        <p class="affiliations reveal">
+          <sup>1</sup>BAAI &nbsp; <sup>2</sup>PKU &nbsp; <sup>3</sup>Kling &nbsp;
+          <sup>4</sup>THU &nbsp; <sup>5</sup>USTC
+        </p>
+
+        <div class="resource-links reveal" aria-label="Project resources">
+          <span class="resource-button resource-disabled" aria-disabled="true">
+            <span class="resource-icon" aria-hidden="true">▤</span>
+            <span><strong>Paper</strong><small>Coming soon</small></span>
+            <b aria-hidden="true">—</b>
+          </span>
+          <span class="resource-button resource-disabled" aria-disabled="true">
+            <span class="resource-icon" aria-hidden="true">&lt;/&gt;</span>
+            <span><strong>Code</strong><small>Coming soon</small></span>
+            <b aria-hidden="true">—</b>
+          </span>
+          <span class="resource-button resource-disabled" aria-disabled="true">
+            <span class="resource-icon" aria-hidden="true">≋</span>
+            <span><strong>Leaderboard</strong><small>Coming soon</small></span>
+            <b aria-hidden="true">—</b>
+          </span>
+          <span class="resource-button resource-disabled" aria-disabled="true">
+            <span class="resource-icon" aria-hidden="true">◇</span>
+            <span><strong>Dataset</strong><small>Coming soon</small></span>
+            <b aria-hidden="true">—</b>
+          </span>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="figure-label"><span>01</span> Benchmark at a glance</div>
+          <div class="figure-scroll">
+            <img src="assets/teaser.webp" alt="Overview of StreamAV-Bench tasks, benchmark composition, and evaluation framework." width="2361" height="1011">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stat-band" aria-label="Benchmark statistics">
+      <div class="shell stats">
+        <div class="stat reveal"><strong>320</strong><span>curated scenarios</span></div>
+        <div class="stat reveal"><strong>180<small>s</small></strong><span>continuous generation</span></div>
+        <div class="stat reveal"><strong>800</strong><span>runtime updates</span></div>
+        <div class="stat reveal"><strong>33</strong><span>fine-grained metrics</span></div>
+        <div class="stat reveal"><strong>13</strong><span>evaluated systems</span></div>
+      </div>
+    </section>
+
+    <section class="section shell" id="overview">
+      <div class="section-heading reveal">
+        <p class="kicker">The evaluation gap</p>
+        <h2>A generated clip is no longer the final product.</h2>
+        <p>Streaming systems extend an already committed world while users intervene in real time. Evaluating only the completed output misses the failures that happen along the way.</p>
+      </div>
+
+      <div class="gap-grid">
+        <article class="gap-card reveal">
+          <span class="card-index">01</span>
+          <h3>Time changes quality</h3>
+          <p>Visual fidelity, audio quality, instruction adherence, and cross-modal alignment may drift as generation continues.</p>
+          <div class="mini-line" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </article>
+        <article class="gap-card reveal">
+          <span class="card-index">02</span>
+          <h3>Updates change the world</h3>
+          <p>A model must realize each runtime instruction without erasing unrelated subjects, environments, or sounds.</p>
+          <div class="update-pills" aria-hidden="true"><i>P0</i><i>U1</i><i>U2</i><i>U3</i></div>
+        </article>
+        <article class="gap-card reveal">
+          <span class="card-index">03</span>
+          <h3>History changes the answer</h3>
+          <p>Later instructions can depend on states established many chunks earlier, demanding active state reuse rather than passive continuity.</p>
+          <div class="history-path" aria-hidden="true"><i></i><b></b><i></i><b></b><i></i></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section tracks-section" id="benchmark">
+      <div class="shell">
+        <div class="section-heading split-heading reveal">
+          <div>
+            <p class="kicker">Two complementary tracks</p>
+            <h2>One benchmark, two streaming regimes.</h2>
+          </div>
+          <p>Both tracks generate 180 seconds of synchronized content, but expose different failure modes.</p>
+        </div>
+
+        <div class="tracks">
+          <article class="track track-progressive reveal">
+            <div class="track-topline">
+              <span class="track-tag">Progressive</span>
+              <span>160 scenarios</span>
+            </div>
+            <h3>Can a world hold together over time?</h3>
+            <p>A single global prompt drives continuous generation. We inspect six non-overlapping intervals to reveal drift, degradation, and long-horizon consistency.</p>
+            <div class="timeline progressive-timeline" aria-label="Progressive track timeline">
+              <span class="prompt-node">Global prompt</span>
+              <div class="timeline-line">
+                <i><b>30</b></i><i><b>60</b></i><i><b>90</b></i><i><b>120</b></i><i><b>150</b></i><i><b>180s</b></i>
+              </div>
+            </div>
+            <ul class="track-list">
+              <li>Instruction fulfillment &amp; drift</li>
+              <li>Quality degradation</li>
+              <li>Visual and cross-modal consistency</li>
+            </ul>
+          </article>
+
+          <article class="track track-interactive reveal">
+            <div class="track-topline">
+              <span class="track-tag">Interactive</span>
+              <span>160 scenarios · 5 updates each</span>
+            </div>
+            <h3>Can a world respond without forgetting?</h3>
+            <p>An initial world is modified every 30 seconds. Updates vary by interaction type, modality, and dependency on earlier events.</p>
+            <div class="timeline interactive-timeline" aria-label="Interactive track timeline">
+              <div class="update-row">
+                <i>P0</i><i>U1</i><i>U2</i><i>U3</i><i>U4</i><i>U5</i>
+              </div>
+              <div class="timeline-line">
+                <i><b>0</b></i><i><b>30</b></i><i><b>60</b></i><i><b>90</b></i><i><b>120</b></i><i><b>150s</b></i>
+              </div>
+            </div>
+            <ul class="track-list">
+              <li>Update fulfillment &amp; target timing</li>
+              <li>Transition stability</li>
+              <li>State retention &amp; history dependency</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell">
+      <div class="section-heading reveal">
+        <p class="kicker">Benchmark construction</p>
+        <h2>Designed for coverage. Verified for clarity.</h2>
+        <p>Taxonomy-driven allocation balances content and difficulty. Every prompt and checklist is independently reviewed by two experts, with disagreements resolved by an adjudicator.</p>
+      </div>
+      <figure class="wide-figure reveal">
+        <img src="assets/construction.webp" alt="Five-stage construction pipeline covering taxonomy design, scripting, prompt generation, checklist construction, and expert verification." loading="lazy">
+        <figcaption><span>02</span> Taxonomy-guided construction and expert verification pipeline.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section metric-section">
+      <div class="shell">
+        <div class="section-heading split-heading reveal">
+          <div>
+            <p class="kicker">Evaluation framework</p>
+            <h2>33 metrics, organized by the questions that matter.</h2>
+          </div>
+          <p>Expert models, multimodal judges, deterministic detectors, and case-specific checklists provide complementary evidence.</p>
+        </div>
+
+        <div class="metric-grid">
+          <article class="metric-card shared reveal">
+            <span class="metric-count">Shared · 9</span>
+            <h3>Quality &amp; alignment</h3>
+            <p>Visual and audio quality, cross-modal semantics, synchronization, and practical streaming efficiency.</p>
+          </article>
+          <article class="metric-card progressive reveal">
+            <span class="metric-count">Progressive · 13</span>
+            <h3>Long-horizon behavior</h3>
+            <p>Instruction drift, quality degradation, subject and background consistency, and audio-video drift.</p>
+          </article>
+          <article class="metric-card interactive reveal">
+            <span class="metric-count">Interactive · 11</span>
+            <h3>Stateful interaction</h3>
+            <p>Update fulfillment, target achievement and latency, transition stability, retention, and history dependency.</p>
+          </article>
+        </div>
+
+        <figure class="wide-figure compact reveal">
+          <img src="assets/dataset.webp" alt="StreamAV-Bench content distributions, complexity factors, and evaluation hierarchy." loading="lazy">
+          <figcaption><span>03</span> Content diversity, track-specific complexity, and the complete evaluation hierarchy.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section findings-section" id="results">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="kicker">What the benchmark reveals</p>
+          <h2>Capability is fragmented across systems.</h2>
+          <p>No evaluated system simultaneously achieves persistent visual quality, strong audio, tight synchronization, and reliable interaction.</p>
+        </div>
+
+        <div class="finding-list">
+          <article class="finding reveal">
+            <span class="finding-number">01</span>
+            <div>
+              <h3>Strong generation does not guarantee stability.</h3>
+              <p>High absolute quality can coexist with substantial temporal drift. Quality and its evolution must be measured together.</p>
+            </div>
+            <span class="finding-label">Progressive</span>
+          </article>
+          <article class="finding reveal">
+            <span class="finding-number">02</span>
+            <div>
+              <h3>Fast realization does not guarantee success.</h3>
+              <p>Models that realize successful updates early may still fail on most instructions. Achievement rate and latency tell different stories.</p>
+            </div>
+            <span class="finding-label">Interactive</span>
+          </article>
+          <article class="finding reveal">
+            <span class="finding-number">03</span>
+            <div>
+              <h3>Preserving state is easier than using it.</h3>
+              <p>Systems retain visible and audible states more reliably than they actively invoke earlier information in later interactions.</p>
+            </div>
+            <span class="finding-label">History</span>
+          </article>
+        </div>
+
+        <div class="result-figures">
+          <figure class="result-figure reveal">
+            <img src="assets/temporal-evolution.webp" alt="Temporal evolution curves for seven quality and audio-video alignment metrics over 180 seconds." loading="lazy">
+            <figcaption><span>04</span> Temporal evolution across six 30-second intervals.</figcaption>
+          </figure>
+          <figure class="result-figure reveal">
+            <img src="assets/qualitative.webp" alt="Eight representative failure modes in progressive and interactive streaming generation." loading="lazy">
+            <figcaption><span>05</span> Eight recurring failure modes exposed by StreamAV-Bench.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section abstract-section">
+      <div class="shell abstract-grid">
+        <div class="section-heading reveal">
+          <p class="kicker">Abstract</p>
+          <h2>Evaluation that evolves with the generated world.</h2>
+        </div>
+        <p class="abstract-copy reveal">
+          Recent advances are pushing video generation toward unbounded streaming
+          audio-video for real-time interactive worlds. Existing benchmarks,
+          however, primarily evaluate completed sequences. StreamAV-Bench bridges
+          this gap with a progressive track for instruction adherence and
+          long-horizon stability, and an interactive track for update response,
+          state retention, and history dependency. Across 320 expert-verified
+          scenarios, 33 fine-grained metrics, and 13 representative systems, the
+          benchmark reveals temporal drift, limited update success, and slow target
+          realization as central obstacles to dependable streaming generation.
+        </p>
+      </div>
+    </section>
+
+    <section class="section citation-section" id="citation">
+      <div class="shell citation-grid">
+        <div class="section-heading reveal">
+          <p class="kicker">Citation</p>
+          <h2>Build on StreamAV-Bench.</h2>
+          <p>If this benchmark supports your research, please cite the paper.</p>
+        </div>
+        <div class="citation-box reveal">
+          <button type="button" class="copy-button" data-copy-citation>
+            <span data-copy-label>Copy BibTeX</span>
+          </button>
+          <pre id="bibtex">@misc{liu2027streamavbench,
+  title     = {StreamAV-Bench: A Comprehensive Benchmark
+               for Streaming Audio-Video Generation},
+  author    = {Liu, Kaiqi and Zeng, Haoxuan and Liu, Jingqi
+               and Fang, Jiacong and Cai, Ziqi and Mao, Yunyao
+               and Liu, Henglin and Sheng, Yu and Weng, Shuchen
+               and Shi, Boxin},
+  year      = {2027},
+  note      = {Under review}
+}</pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <a class="brand footer-brand" href="#top">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>StreamAV-Bench</span>
+      </a>
+      <p>Benchmarking persistent, responsive, and synchronized generated worlds.</p>
+      <span class="footer-soon">Paper · Coming soon</span>
+    </div>
+  </footer>
+</body>
+</html>
