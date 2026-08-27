@@ -11,6 +11,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#f7f5ef">
   <title>StreamAV-Bench</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -23,9 +26,7 @@
   <header class="site-header" data-header>
     <nav class="nav shell" aria-label="Primary navigation">
       <a class="brand" href="#top" aria-label="StreamAV-Bench home">
-        <span class="brand-mark" aria-hidden="true">
-          <span></span><span></span><span></span>
-        </span>
+        <img class="brand-mark" src="assets/favicon-64.png" alt="" width="28" height="28">
         <span>StreamAV-Bench</span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>
@@ -36,7 +37,6 @@
         <a href="#overview">Overview</a>
         <a href="#benchmark">Benchmark</a>
         <a href="#results">Findings</a>
-        <a href="#citation">Citation</a>
         <span class="nav-paper nav-disabled">Paper · Soon</span>
       </div>
     </nav>
@@ -55,10 +55,6 @@
         <p class="paper-title reveal">
           A Comprehensive Benchmark for<br class="desktop-break">
           Streaming Audio-Video Generation
-        </p>
-        <p class="hero-tagline reveal">
-          Streaming generation<br>
-          needs <em>streaming evaluation.</em>
         </p>
 
         <div class="authors reveal" aria-label="Authors">
@@ -100,6 +96,11 @@
             <b aria-hidden="true">—</b>
           </span>
         </div>
+
+        <p class="hero-tagline reveal">
+          Streaming generation<br>
+          needs <em>streaming evaluation.</em>
+        </p>
 
         <div class="hero-visual reveal">
           <div class="figure-label"><span>01</span> Benchmark at a glance</div>
@@ -286,17 +287,6 @@
             <span class="finding-label">Interactive</span>
           </article>
         </div>
-
-        <div class="result-figures">
-          <figure class="result-figure reveal">
-            <img src="assets/temporal-evolution.webp" alt="Temporal evolution of progressive-track quality and audio-video alignment over 180 seconds." loading="lazy">
-            <figcaption><span>04</span> Temporal evolution of six quality and alignment dimensions over 180 seconds.</figcaption>
-          </figure>
-          <figure class="result-figure reveal">
-            <img src="assets/qualitative.webp" alt="Eight common failure modes in progressive and interactive streaming generation." loading="lazy">
-            <figcaption><span>05</span> Eight common failure modes in long-horizon stability, interactive response, state reuse, and prompt-based continuity.</figcaption>
-          </figure>
-        </div>
       </div>
     </section>
 
@@ -318,35 +308,11 @@
           interactive track for interactive response and state retention and reuse.
           With expert-verified evaluation cases across 32 fine-grained dimensions,
           we conduct an extensive evaluation of 13 representative systems. Our
-          analysis reveals that current models suffer from temporal degradation in
+          analysis reveals that current models suffer from temporal drift in
           progressive generation and responsiveness bottlenecks during interactive
-          control.
+          control. Based on a comprehensive failure analysis, we share insights to
+          advance the development of native joint audio-video streaming models.
         </p>
-      </div>
-    </section>
-
-    <section class="section citation-section" id="citation">
-      <div class="shell citation-grid">
-        <div class="section-heading reveal">
-          <p class="kicker">Citation</p>
-          <h2>Build on StreamAV-Bench.</h2>
-          <p>If this benchmark supports your research, please cite the paper.</p>
-        </div>
-        <div class="citation-box reveal">
-          <button type="button" class="copy-button" data-copy-citation>
-            <span data-copy-label>Copy BibTeX</span>
-          </button>
-          <pre id="bibtex">@misc{liu2027streamavbench,
-  title     = {StreamAV-Bench: A Comprehensive Benchmark
-               for Streaming Audio-Video Generation},
-  author    = {Liu, Kaiqi and Zeng, Haoxuan and Liu, Jingqi
-               and Fang, Jiacong and Cai, Ziqi and Mao, Yunyao
-               and Liu, Henglin and Sheng, Yu and Weng, Shuchen
-               and Shi, Boxin},
-  year      = {2027},
-  note      = {Under review}
-}</pre>
-        </div>
       </div>
     </section>
   </main>
@@ -354,7 +320,7 @@
   <footer>
     <div class="shell footer-inner">
       <a class="brand footer-brand" href="#top">
-        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <img class="brand-mark" src="assets/favicon-64.png" alt="" width="28" height="28">
         <span>StreamAV-Bench</span>
       </a>
       <p>Benchmarking persistent, responsive, and synchronized generated worlds.</p>

@@ -1,8 +1,6 @@
 const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navLinks = document.querySelector("[data-nav-links]");
-const copyButton = document.querySelector("[data-copy-citation]");
-const copyLabel = document.querySelector("[data-copy-label]");
 
 const updateHeader = () => {
   header?.classList.toggle("scrolled", window.scrollY > 20);
@@ -37,26 +35,4 @@ const revealObserver = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach((element, index) => {
   element.style.transitionDelay = `${Math.min(index % 4, 3) * 55}ms`;
   revealObserver.observe(element);
-});
-
-copyButton?.addEventListener("click", async () => {
-  const citation = document.querySelector("#bibtex")?.textContent?.trim();
-  if (!citation) return;
-
-  try {
-    await navigator.clipboard.writeText(citation);
-    copyLabel.textContent = "Copied";
-    window.setTimeout(() => {
-      copyLabel.textContent = "Copy BibTeX";
-    }, 1800);
-  } catch {
-    const selection = window.getSelection();
-    const range = document.createRange();
-    const citationElement = document.querySelector("#bibtex");
-    if (!selection || !citationElement) return;
-    range.selectNodeContents(citationElement);
-    selection.removeAllRanges();
-    selection.addRange(range);
-    copyLabel.textContent = "Selected";
-  }
 });
