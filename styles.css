@@ -944,14 +944,9 @@ footer {
   text-align: center;
 }
 
-.footer-inner > a:last-child,
-.footer-soon {
+.footer-inner > a:last-child {
   font-size: 13px;
   font-weight: 700;
-}
-
-.footer-soon {
-  color: rgba(255, 255, 255, 0.45);
 }
 
 .reveal {
