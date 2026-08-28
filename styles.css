@@ -151,17 +151,6 @@ a {
   background: var(--ink);
 }
 
-.nav-disabled {
-  color: var(--ink-soft);
-  cursor: default;
-  opacity: 0.6;
-}
-
-.nav-disabled:hover {
-  color: var(--ink-soft);
-  background: transparent;
-}
-
 .nav-toggle {
   display: none;
   width: 42px;
@@ -348,12 +337,6 @@ p {
   box-shadow: 0 12px 30px rgba(47, 58, 49, 0.08);
 }
 
-.resource-primary {
-  color: var(--paper);
-  background: var(--ink);
-  border-color: var(--ink);
-}
-
 .resource-icon {
   display: grid;
   place-items: center;
@@ -364,11 +347,6 @@ p {
   border-radius: 9px;
   font-size: 13px;
   font-weight: 700;
-}
-
-.resource-primary .resource-icon {
-  color: var(--ink);
-  background: var(--paper);
 }
 
 .resource-button > span:nth-child(2) {
@@ -390,28 +368,9 @@ p {
   white-space: nowrap;
 }
 
-.resource-primary small {
-  color: rgba(255, 255, 255, 0.58);
-}
-
 .resource-button b {
   color: var(--ink-soft);
   font-size: 13px;
-}
-
-.resource-primary b {
-  color: var(--paper);
-}
-
-.resource-disabled {
-  cursor: default;
-  opacity: 0.62;
-}
-
-.resource-disabled:hover {
-  transform: none;
-  border-color: var(--line);
-  box-shadow: none;
 }
 
 .hero-visual {
@@ -910,18 +869,57 @@ figcaption {
   background: var(--coral-soft);
 }
 
-.abstract-grid {
+.abstract-grid,
+.citation-grid {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: 100px;
 }
 
-.abstract-grid .section-heading {
+.abstract-grid .section-heading,
+.citation-grid .section-heading {
   margin-bottom: 0;
 }
 
 .abstract-copy {
   font-size: 20px;
+}
+
+.citation-section {
+  background: var(--paper-deep);
+}
+
+.citation-box {
+  position: relative;
+  min-width: 0;
+  padding: 26px;
+  color: #e8eee9;
+  background: var(--ink);
+  border-radius: var(--radius);
+}
+
+.citation-box pre {
+  margin: 0;
+  overflow-x: auto;
+  font: 12px/1.65 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  white-space: pre;
+}
+
+.copy-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 7px 10px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 0;
+  border-radius: 7px;
+  cursor: pointer;
+  font: 700 10px var(--sans);
+}
+
+.copy-button:hover {
+  background: var(--blue-soft);
 }
 
 footer {
@@ -1006,7 +1004,8 @@ footer {
   }
 
   .split-heading,
-  .abstract-grid {
+  .abstract-grid,
+  .citation-grid {
     grid-template-columns: 1fr;
     gap: 30px;
   }
@@ -1130,6 +1129,14 @@ footer {
   .wide-figure {
     padding: 10px;
     border-radius: 16px;
+  }
+
+  .citation-box {
+    padding: 62px 18px 18px;
+  }
+
+  .citation-box pre {
+    font-size: 10px;
   }
 }
 
