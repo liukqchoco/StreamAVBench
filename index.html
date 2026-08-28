@@ -19,8 +19,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260829-2">
+  <script src="script.js?v=20260829-2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -40,7 +40,6 @@
         <a href="#benchmark">Benchmark</a>
         <a href="#results">Findings</a>
         <a href="#citation">Citation</a>
-        <a class="nav-paper" href="https://arxiv.org/abs/2608.26336" target="_blank" rel="noopener noreferrer">Paper · arXiv</a>
       </div>
     </nav>
   </header>
@@ -330,15 +329,18 @@
           <button type="button" class="copy-button" data-copy-citation aria-label="Copy BibTeX citation">
             <span data-copy-label aria-live="polite">Copy BibTeX</span>
           </button>
-          <pre id="bibtex">@article{liu2026streamavbench,
-  title   = {StreamAV-Bench: A Comprehensive Benchmark for
-             Streaming Audio-Video Generation},
-  author  = {Liu, Kaiqi and Zeng, Haoxuan and Liu, Jingqi and
-             Fang, Jiacong and Cai, Ziqi and Mao, Yunyao and
-             Liu, Henglin and Sheng, Yu and Weng, Shuchen and
-             Shi, Boxin},
-  journal = {arXiv preprint arXiv:2608.26336},
-  year    = {2026}
+          <pre id="bibtex">@misc{liu2026streamavbenchcomprehensivebenchmarkstreaming,
+  title         = {StreamAV-Bench: A Comprehensive Benchmark for
+                   Streaming Audio-Video Generation},
+  author        = {Kaiqi Liu and Haoxuan Zeng and Jingqi Liu and
+                   Jiacong Fang and Ziqi Cai and Yunyao Mao and
+                   Henglin Liu and Yu Sheng and Shuchen Weng and
+                   Boxin Shi},
+  year          = {2026},
+  eprint        = {2608.26336},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.SD},
+  url           = {https://arxiv.org/abs/2608.26336}
 }</pre>
         </div>
       </div>
@@ -352,7 +354,6 @@
         <span>StreamAV-Bench</span>
       </a>
       <p>Benchmarking persistent, responsive, and synchronized generated worlds.</p>
-      <a href="https://arxiv.org/pdf/2608.26336" target="_blank" rel="noopener noreferrer">Paper · arXiv ↗</a>
     </div>
   </footer>
 </body>
