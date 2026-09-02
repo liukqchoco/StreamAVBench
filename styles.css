@@ -325,6 +325,12 @@ p {
   box-shadow: 0 12px 30px rgba(47, 58, 49, 0.08);
 }
 
+.resource-primary {
+  color: var(--paper);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
 .resource-icon {
   display: grid;
   place-items: center;
@@ -337,6 +343,11 @@ p {
   font-weight: 700;
 }
 
+.resource-primary .resource-icon {
+  color: var(--ink);
+  background: var(--paper);
+}
+
 .resource-button > span:nth-child(2) {
   display: flex;
   min-width: 0;
@@ -344,13 +355,13 @@ p {
 }
 
 .resource-button strong {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .resource-button small {
   overflow: hidden;
   color: var(--ink-soft);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -359,6 +370,14 @@ p {
 .resource-button b {
   color: var(--ink-soft);
   font-size: 13px;
+}
+
+.resource-primary small {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.resource-primary b {
+  color: var(--paper);
 }
 
 .hero-visual {
